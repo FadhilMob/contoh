@@ -18,5 +18,7 @@ use App\Http\Controllers\ArsipController;
 Route::get('/dashboard', function () {
     return view('sb-admin/main');
 });
+
+
 Route::resource('rhk', RhkController::class);
 Route::resource('arsip', ArsipController::class);

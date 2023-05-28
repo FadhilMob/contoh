@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ArsipModel;
 
 class ArsipController extends Controller
 {
@@ -11,7 +12,10 @@ class ArsipController extends Controller
      */
     public function index()
     {
-        return view('arsip.index');
+        $arsip = ArsipModel::with('rhk')->get();
+        return view('arsip.index', [
+            'arsip'=>$arsip
+        ]);
     }
 
     /**

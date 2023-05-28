@@ -12,7 +12,10 @@ class RhkController extends Controller
      */
     public function index()
     {
-        return view('rhk.index');
+        $rhk = RhkModel::get();
+        return view('rhk.index', [
+            'rhk'=>$rhk
+        ]);
     }
 
     /**

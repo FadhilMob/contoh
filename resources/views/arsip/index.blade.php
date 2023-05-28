@@ -9,12 +9,12 @@
         <div class="card-header py-3">
 
             {{-- TOMBOL TAMBAH --}}
-            <a href="#" class="btn btn-primary btn-icon-split">
+            {{-- <a href="#" class="btn btn-primary btn-icon-split">
                 <span class="icon text-white-40">
                      <i class="fas fa-plus"></i>
                 </span>
                  <span class="text">Tambah ARSIP</span>
-            </a>
+            </a> --}}
 
             {{-- ALERT SUKSES --}}
             @if (session()->has('success'))
@@ -31,13 +31,20 @@
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">Nama RHK</th>
+                            <th scope="col">Judul</th>
+                            <th scope="col">Tanggal</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($arsip as $arsip)
+                            
+                        
                         <tr>
-                            <td></td>
-                            <td></td>
+                            <td>{{ $arsip->id }}</td>
+                            <td>{{ $arsip->rhk->nama_rhk }}</td>  
+                            <td>{{ $arsip->judul_kegiatan }}</td>
+                            <td>{{ $arsip->tanggal }}</td>
                             <td align="center">
                                 {{-- <div class="btn-group">
                                     <a href="" class="btn btn-primary mr-2">Edit</a>
@@ -67,6 +74,7 @@
                                 </a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

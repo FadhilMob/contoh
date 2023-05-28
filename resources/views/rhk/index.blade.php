@@ -35,15 +35,17 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($rhk as $rhk)
                         <tr>
-                            <td></td>
-                            <td></td>
+                            <td>{{ $rhk->id }}</td>
+                            <td>{{ $rhk->nama_rhk }}</td>
                             <td align="center">
                             <form action="#" method="post">
                              <a href="#" class="btn btn-info">Template</a>
                             </form>
                         </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
