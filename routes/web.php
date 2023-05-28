@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RhkController;
+use App\Http\Controllers\ArsipController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/dashboard', function () {
     return view('sb-admin/main');
 });
+Route::resource('rhk', RhkController::class);
+Route::resource('arsip', ArsipController::class);
