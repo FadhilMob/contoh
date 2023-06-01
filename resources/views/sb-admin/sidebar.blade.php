@@ -35,6 +35,13 @@
     </li>
 
     <li class="nav-item">
+        <a class="nav-link" href="/home">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>LAPORAN</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link" href="/arsip">
             <i class="fas fa-fw fa-cog"></i>
             <span>ARSIP</span>
