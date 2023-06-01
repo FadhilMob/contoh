@@ -1,7 +1,7 @@
 @extends('sb-admin.index')
 
 @section('title')
-    DESA | LIBRARY
+    E-OPOIKI
 @endsection
 @section('content')
     <!-- Begin Page Content -->
@@ -77,82 +77,40 @@
             </div>
 
         </div>
+        <h2>DATA RHK</h2>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
 
-        <!-- Chart and Pie -->
-        <div class="row">
+            {{-- TOMBOL TAMBAH --}}
+            <a href="#" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-40">
+                     <i class="fas fa-plus"></i>
+                </span>
+                 <span class="text">Tambah RHK</span>
+            </a>
 
-            <!-- Area Chart -->
-            <div class="col-xl-8 col-lg-7">
-                <div class="card shadow mb-4">
-                    <!-- Card Header - Dropdown -->
-                    <div
-                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">STATISTIK PEMINJAMAN BUKU</h6>
-                        <div class="dropdown no-arrow">
-                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                aria-labelledby="dropdownMenuLink">
-                                <div class="dropdown-header">Dropdown Header:</div>
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card Body -->
-                    <div class="card-body">
-                        <div class="chart-area">
-                            <canvas id="myAreaChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{-- ALERT SUKSES --}}
+            @if (session()->has('success'))
+                 <div class="alert alert-success" role="alert">
+                     {{ session('success') }}
+                 </div> 
+            @endif
 
-            <!-- Pie Chart -->
-            <div class="col-xl-4 col-lg-5">
-                <div class="card shadow mb-4">
-                    <!-- Card Header - Dropdown -->
-                    <div
-                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">PALING BANYAK KATEGORI YANG DIPINJAM</h6>
-                        <div class="dropdown no-arrow">
-                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                aria-labelledby="dropdownMenuLink">
-                                <div class="dropdown-header">Dropdown Header:</div>
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card Body -->
-                    <div class="card-body">
-                        <div class="chart-pie pt-4 pb-2">
-                            <canvas id="myPieChart"></canvas>
-                        </div>
-                        <div class="mt-4 text-center small">
-                            <span class="mr-2">
-                                <i class="fas fa-circle text-primary"></i> Administrasi
-                            </span>
-                            <span class="mr-2">
-                                <i class="fas fa-circle text-success"></i> UMKM
-                            </span>
-                            <span class="mr-2">
-                                <i class="fas fa-circle text-info"></i> Lainnya
-                            </span>
-                        </div>
-                    </div>
-                </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama RHK</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
         </div>
     </div>
+    </div>
 @endsection
+

@@ -41,7 +41,7 @@
                             <td>{{ $rhk->nama_rhk }}</td>
                             <td align="center">
                             <form action="#" method="post">
-                             <a href="#" class="btn btn-info">Template</a>
+                             <a href="/laporan" class="btn btn-info">Template</a>
                             </form>
                         </td>
                         </tr>
