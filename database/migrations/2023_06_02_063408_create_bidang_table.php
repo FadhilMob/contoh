@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('arsip', function (Blueprint $table) {
+        Schema::create('bidang', function (Blueprint $table) {
             $table->id();
-            //Foreign Key
-            $table->unsignedInteger('rhk_id');
-            $table->string('tanggal');
-            $table->string('judul_kegiatan');
+            $table->string('nama_bidang');
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('arsip');
+        Schema::dropIfExists('bidang');
     }
 };

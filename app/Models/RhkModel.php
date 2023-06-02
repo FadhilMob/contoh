@@ -14,8 +14,8 @@ class RhkModel extends Model
         'nama_rhk'
     ];
 
-    public function arsip()
+    public function rhk()
     {
-        return $this->HasOne(ArsipModel::class, 'rhk_id');
+        return $this->belongsTo(RhkModel::class, 'rhk_id');
     }
 }
