@@ -19,20 +19,33 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">LOGIN!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form  method="POST" action="/dashboard">
+                                    @csrf
                                         <div class="form-group">
-                                            <input type="username" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter NIP">
+                                            <input type="email" class="form-control form-control-user"
+                                                id="email" aria-describedby="emailHelp" placeholder="NIP">
+                                                    @error('email')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                                id="password" placeholder="Password">
+                                                @error('password')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                @enderror
                                         </div>
-                                        
+<!--                                         
                                         <a href="/dashboard" class="btn btn-success btn-user btn-block">
                                             Login
-                                        </a>
+                                        </a> -->
+                                        <button type="submit" class="btn btn-success btn-user btn-block">
+                                            {{ __('Login') }}
+                                        </button>
                                         <hr>
                                     </form>
                                     <hr>
