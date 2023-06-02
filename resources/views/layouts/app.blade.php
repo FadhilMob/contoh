@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="bg-gradient-secondary">
+<body class="bg-hijau">
 
     <div class="container">
 
