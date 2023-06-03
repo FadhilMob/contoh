@@ -19,35 +19,44 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">LOGIN!</h1>
                                     </div>
-                                    <form  method="POST" action="/dashboard">
+                            <form method="POST" action="{{ route('login') }}">
                                     @csrf
-                                        <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="email" aria-describedby="emailHelp" placeholder="NIP">
-                                                    @error('email')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
+
+                                    <div class="row mb-4">
+                                        <label for="username" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+
+                                            @error('username')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="password" placeholder="Password">
-                                                @error('password')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                @enderror
+                                    </div>
+
+                                    <div class="row mb-4">
+                                        <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                            @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
-<!--                                         
-                                        <a href="/dashboard" class="btn btn-success btn-user btn-block">
-                                            Login
-                                        </a> -->
-                                        <button type="submit" class="btn btn-success btn-user btn-block">
-                                            {{ __('Login') }}
-                                        </button>
-                                        <hr>
-                                    </form>
+                                    </div>
+                                    <div class="row mb-0">
+                                        <div class="col-md-8 offset-md-4">
+                                            <button type="submit" class="btn btn-primary">
+                                                {{ __('Login') }}
+                                            </button>
+                                        </div>
+                                    </div>
+                            </form>
                                     <hr>
                                 </div>
                             </div>

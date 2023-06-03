@@ -16,8 +16,8 @@ class ArsipModel extends Model
         'judul_kegiatan',
     ];
 
-    public function rhk()
-    {
-        return $this->belongsTo(RhkModel::class, 'rhk_id');
-    }
+    // public function rhk()
+    // {
+    //     return $this->belongsTo(RhkModel::class, 'rhk_id');
+    // }
 }

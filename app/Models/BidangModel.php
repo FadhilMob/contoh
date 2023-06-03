@@ -13,8 +13,8 @@ class BidangModel extends Model
         'nama_bidang'
     ];
 
-    public function bidang()
-    {
-        return $this->hasOne(BidangModel::class, 'bidang_id');
-    }
+    // public function bidang()
+    // {
+    //     return $this->hasOne(BidangModel::class, 'bidang_id');
+    // }
 }
