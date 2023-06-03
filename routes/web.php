@@ -24,7 +24,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/logout', [App\Http\Controllers\HomeController::class, 'logout'])->name('logout')->middleware('auth');
 // Route::get('/dashboard', function () {
 //     return view('sb-admin/main');
 // });
@@ -37,6 +37,6 @@ Route::resource('laporan', LaporanController::class);
 
 
 
-Route::get('/logout', [HomeController::class, 'logout'])->name('logout')->middleware('auth');
+
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
